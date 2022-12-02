@@ -1,0 +1,33 @@
+{{ "<!-- Header -->" | safeHTML }}
+    <section id="educations" class="tiles card">
+        <header class="card-header card-toggle">
+            <p class="card-header-title has-text-white is-size-6">
+                Languages
+            </p>
+            <a href="#collapsible-card" class="card-header-icon is-hidden-fullscreen" aria-label="more options">
+                <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+            </a>
+        </header>
+        <div id="collapsible-card" class="card-content is-hidden">
+            <div class="card-content">
+                <div class="columns">
+                    <div class="column is-one-fifths"></div>
+                    <div class="column has-text-white is-size-6 is-underlined has-text-weight-bold">language</div>
+                    <div class="column has-text-white is-size-6 is-underlined has-text-weight-bold">speak</div>
+                    <div class="column has-text-white is-size-6 is-underlined has-text-weight-bold">write</div>
+                    <div class="column has-text-white is-size-6 is-underlined has-text-weight-bold">read</div>
+                </div>
+            {{ range .Site.Params.Languages.showcase }}
+                    <div class="columns">
+                        <div class="column is-one-fifths"></div>
+                        <div class="column has-text-white is-size-6">{{ .language}}</div>
+                        <div class="column has-text-white is-size-6">{{ .speak}}</div>
+                        <div class="column has-text-white is-size-6">{{ .write}}</div>
+                        <div class="column has-text-white is-size-6">{{ .read}}</div>
+                    </div>
+                {{ end }}
+        </div>
+    </div>
+</section>

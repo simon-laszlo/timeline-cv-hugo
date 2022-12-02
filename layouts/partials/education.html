@@ -1,0 +1,25 @@
+{{ "<!-- Header -->" | safeHTML }}
+    <section id="educations" class="tiles card">
+        <header class="card-header card-toggle">
+            <p class="card-header-title has-text-white is-size-6">
+                Educations
+            </p>
+            <a href="#collapsible-card" class="card-header-icon is-hidden-fullscreen" aria-label="more options">
+                <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+            </a>
+        </header>
+        <div id="collapsible-card" class="card-content is-hidden">
+            <div class="card-content">
+                {{ range .Site.Params.Educations.showcase }}
+                    <div class="columns">
+                        <div class="column is-one-fifths"></div>
+                        <div class="column has-text-white is-size-6">{{ .start_at}}</div>
+                        <div class="column has-text-white is-size-6">{{ .school}}</div>
+                        <div class="column has-text-white is-size-6">{{ .details}}</div>
+                    </div>
+                {{ end }}
+        </div>
+    </div>
+</section>

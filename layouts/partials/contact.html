@@ -1,0 +1,32 @@
+{{ "<!-- Contact -->" | safeHTML}}
+    <script type="text/javascript">var submitted=false;</script>
+    <section class="pt-6 mb-6" id="contact">
+        <div class="columns">
+            <div id="contact" class="column">
+                <section>
+                    <div>
+                        <div class="field is-inline">
+                            <label class="fa-solid fa-at label has-text-white"> Email</label>
+                            <div class="has-text-white icons">
+                                <p id="liame" class="is-size-3"> </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>    
+            </div>
+            <div id="mobile" class="column is-one-fifths">
+                <section>
+                    <div>
+                        <div class="field is-inline">
+                            <label class="label has-text-white fa-solid fa-phone">Mobile</label>
+                            <div id="mobile_number" class="has-text-white icons">
+                                <p class="has-text-white is-size-3"> {{ .Site.Params.phone}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>               
+            </div>
+        </div>
+    </section>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='/thankyou';}"></iframe>
+

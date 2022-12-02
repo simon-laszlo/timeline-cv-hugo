@@ -1,0 +1,28 @@
+{{ "<!-- Header -->" | safeHTML }}
+    <section id="personality" class="tiles card">
+        <header class="card-header card-toggle">
+            <p class="card-header-title has-text-white is-size-6">
+                Personality traits
+            </p>
+            <a href="#collapsible-card" class="card-header-icon is-hidden-fullscreen" aria-label="more options">
+                <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+            </a>
+        </header>
+        <div id="collapsible-card" class="card-content is-hidden content">
+            <div class="columns">
+                <div class="column is-one-fifths"></div>
+                <div>
+                {{ range .Site.Params.Personality.showcase }}
+                <ul>
+                    {{ range .traits }}
+                        <li class="has-text-white is-size-6"> {{.}} </li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </div>
+            <div class="column is-three-fifths"></div>
+        </div>
+    </div>
+</section>

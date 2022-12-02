@@ -1,0 +1,53 @@
+{{ define "main" }}
+
+    {{ "<!-- Main -->" | safeHTML }}
+    <div id="main">
+
+      {{$page := 1}}
+      <div id="book" class="book">
+        <div class="page">
+          <header>
+            <div class="is-size-7 is-pulled-right">{{ .Site.Params.name }}</div>
+          </header>
+          {{- partial "personal.html" . -}}
+
+          {{ if .Site.Params.Educations.enable }}
+            {{- partial "print/education.html" . -}}
+          {{ end }}
+          {{ if .Site.Params.Languages.enable }}
+            {{- partial "print/languages.html" . -}}
+          {{ end }}
+
+          {{ if .Site.Params.Knowledges.enable }}
+            {{- partial "print/knowledges.html" . -}}
+          {{ end }}
+
+          <footer class="is-align-flex-end">
+            <div class="is-size-7 has-text-centered">{{$page}}</div>
+          </footer>
+        </div>
+
+        {{ if .Site.Params.Projects.enable }}
+          {{ .Scratch.Set "page" $page }}
+          {{- partialCached "print/project.html" . -}}
+        {{ end }}
+
+        {{ if .Site.Params.Personality.enable }}
+          <div class="page is-flex is-flex-direction-column">
+            <header>
+              <div class="is-size-7 is-pulled-right">{{ .Site.Params.name }}</div>
+            </header>
+            {{- partial "print/personality.html" . -}}
+            <footer class="is-align-flex-end">
+              {{ $.Scratch.Set "page" (add ($.Scratch.Get "page") 1)}}
+              <div class="is-size-7 has-text-centered">{{ $.Scratch.Get "page" }}</div>
+            </footer>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+
+    {{ "<!-- Scripts -->" | safeHTML}}
+    {{ partial "js.html" . }}    
+
+{{ end }}

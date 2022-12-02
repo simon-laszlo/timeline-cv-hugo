@@ -1,0 +1,147 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Demo User'
+
+enableRobotsTXT = true
+
+theme = "timeline-cv-hugo"
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[params]
+
+  name = "Demo User"
+  description = "Senior backend developer"
+  dirthday = "11.11.1986"
+  nationality = "worldwide"
+  address = "CH-8050 Zürich"
+  phone = "0041 12 234 1233"
+  image = "man.webp"
+  email = [0x79,0x6f,0x72,0x65,0x6d,0x61,0x69,0x6c,0x40,0x67,0x6d,0x61,0x69,0x6c,0x2e,0x63,0x6f,0x6d]
+
+    [params.matomo]
+    enable = false
+    url = "your host"
+    id = "1"
+
+    [params.projects]
+    enable = true
+    # Display your showcases here.
+    [[params.projects.showcase]]
+      start_at = "03.2022"
+      period = "03.2022 -"
+      location = "Switzerland, Zürich"
+      employee = "IT DEV GmbH"
+      project_owner = "IT DEV GmbH"
+      role = "developer"
+      subtitle = "Android app"
+      technologies = ["Kotlin", "Android"]
+      tasks = ["Android app based on kotlin"
+              ]
+
+
+    [[params.projects.showcase]]
+      new_job = true
+      year = "2015"
+      start_at = "10.2015"
+      location = "Switzerland, Zürich"
+      employee = "IT DEV GmbH"
+
+    [[params.projects.showcase]]
+      start_at = "05.2011"
+      period = "05.2011 - 10.2015"
+      location = "Switzerland, Bern"
+      employee = "IT Company AG"
+      project_owner = "IT Company AG"
+      role = "Java developer"
+      subtitle = "Web application development"
+      technologies = ["Java", "GWT", "JPA", "Hibernate", "Lucene", "JEE6", "JBoss", "MySql", "Glassfish", "EclipseLink", "PrimeFaces", "CDI", "Scrum"]
+      tasks = ["SW development..."]
+
+    [[params.projects.showcase]]
+      new_job = true
+      year = "2011"
+      start_at = "05.2011"
+      location = "Switzerland, Bern"
+      employee = "IT Company AG"
+
+
+  [params.personality]
+    enable = true
+
+    [[params.personality.showcase]]
+      traits = ["teamplayer", "self-motivated", "flexible", "open-minded", "or what you want"]
+
+  [params.knowledges]
+    enable = true
+
+    [[params.knowledges.showcase]]
+      knowledge = "revision control systems:"
+      details = ["SVN", "CVS", "GIT"]
+
+    [[params.knowledges.showcase]]
+      knowledge = "build tools:"
+      details = ["ANT", "Maven", "Gradle", "Cargo"]
+
+  [params.educations]
+    enable = true
+
+    [[params.educations.showcase]]
+      start_at = "1998-2003"
+      school = "ETH Zürich"
+      details = "IT"
+
+    [[params.educations.showcase]]
+      start_at = "1993-1998"
+      school = "School bern"
+
+  [params.languages]
+    enable = true
+
+    [[params.languages.showcase]]
+      language = "German"
+      speak = "prof"
+      write = "prof"
+      read = "prof"
+
+    [[params.languages.showcase]]
+      language = "English"
+      speak = "advanced"
+      write = "advanced"
+      read = "advanced"
+
+
+  # Contact section
+  [params.contact]
+    enable = true
+
+  [params.footer]
+    enable = true
+
+    # Uses font awesome icons
+    [[params.footer.social]]
+      icon = "fa-solid fa-envelope"
+      url= "#contact"
+      label = "Contact"
+
+    [[params.footer.social]]
+      icon = "fa-solid fa-mobile"
+      url= "#mobile"
+      label = "Mobile"      
+    
+    [[params.footer.social]]
+      icon = "fa-brands fa-github"
+      url= "yoururl"
+      label = "GitHub"
+      blank = true
+
+    [[params.footer.social]]
+      icon = "fa-brands fa-linkedin"
+      url= "your linkedin"
+      label = "LinkedIn"
+      blank = true
+
+   

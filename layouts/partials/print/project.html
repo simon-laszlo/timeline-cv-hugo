@@ -1,0 +1,112 @@
+{{ "<!-- Header -->" | safeHTML }}
+<div class="page is-flex is-flex-direction-column">
+    <header>
+        <div  class="is-size-7 is-pulled-right">{{ .Site.Params.name }}</div>
+    </header>
+    <section class="tiles pt-4 is-flex-grow-1">
+        <header class="">
+            <p class="card-header-title">
+                Work experiences
+            </p>
+        </header>
+        <div id="collapsible-card">
+            <div>
+                {{ range $index, $element := where .Site.Params.Projects.showcase "new_job" "ne" "True"}}
+                {{ if and (gt $index 0) (eq (mod $index 3) 0) }}
+                                </div>
+                            </div>
+                        </section>
+                        <footer class="is-align-flex-end">
+                            {{ $.Scratch.Set "page" (add ($.Scratch.Get "page") 1)}}
+                            <div class="is-size-7 has-text-centered">{{ $.Scratch.Get "page" }}</div>
+                        </footer>
+                    </div>
+                    <div class="page is-flex is-flex-direction-column">
+                        <header>
+                            <div  class="is-size-7 is-pulled-right">{{ $.Site.Params.name }}</div>
+                        </header>                        
+                        <section class="tiles pt-4 is-flex-grow-1">
+                            <div id="collapsible-card">
+                                <div>
+                {{ end}}
+                <div class="notification has-background-white">
+                    <div class="field is-horizontal mb-0">
+                        <div class="field-label">
+                            <label class="label is-underlined has-text-weight-bold">Period:</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="has-text-weight-semibold">{{ .period }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field is-horizontal mb-0">
+                        <div class="field-label">
+                            <label class="label is-underlined has-text-weight-bold">Company:</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="has-text-weight-semibold">{{ .employee }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field is-horizontal mb-0">
+                        <div class="field-label">
+                            <label class="label is-underlined has-text-weight-bold">Role:</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="has-text-weight-semibold">{{ .role }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field is-horizontal mb-0">
+                        <div class="field-label">
+                            <label class="label is-underlined has-text-weight-bold">Project:</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p>{{ .subtitle }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field is-horizontal mb-0">
+                        <div class="field-label">
+                            <label class="label is-underlined has-text-weight-bold">Description:</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <ul>
+                                    {{ range .tasks}}
+                                    <li>
+                                        <p>{{.}}</p>
+                                    </li>
+                                    {{ end }}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field is-horizontal mb-0">
+                        <div class="field-label">
+                            <label class="label is-underlined has-text-weight-bold">Technologies:</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="is-size-7 has-text-weight-semibold">[
+                                    {{ range .technologies}}
+                                    {{.}},
+                                    {{ end }}
+                                    ]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    <footer class="is-align-flex-end">
+        {{ $.Scratch.Set "page" (add ($.Scratch.Get "page") 1)}}
+        <div class="is-size-7 has-text-centered">{{ $.Scratch.Get "page" }}</div>
+    </footer>
+</div>
