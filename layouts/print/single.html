@@ -29,7 +29,7 @@
 
         {{ if .Site.Params.Projects.enable }}
           {{ .Scratch.Set "page" $page }}
-          {{- partialCached "print/project.html" . -}}
+          {{- partial "print/project.html" . -}}
         {{ end }}
 
         {{ if .Site.Params.Personality.enable }}
@@ -39,8 +39,7 @@
             </header>
             {{- partial "print/personality.html" . -}}
             <footer class="is-align-flex-end">
-              {{ $.Scratch.Set "page" (add ($.Scratch.Get "page") 1)}}
-              <div class="is-size-7 has-text-centered">{{ $.Scratch.Get "page" }}</div>
+              <div class="is-size-7 has-text-centered">{{ add (.Scratch.Get "page") 1 }}</div>
             </footer>
           </div>
         {{ end }}
