@@ -106,7 +106,7 @@
         </div>
     </section>
     <footer class="is-align-flex-end">
-        {{ $.Scratch.Set "page" (add ($.Scratch.Get "page") 1)}}
-        <div class="is-size-7 has-text-centered">{{ $.Scratch.Get "page" }}</div>
+        {{ .Scratch.Set "page" (add (.Scratch.Get "page") 1)}}
+        <div class="is-size-7 has-text-centered">{{ .Scratch.Get "page" }}</div>
     </footer>
 </div>
