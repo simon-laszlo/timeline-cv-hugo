@@ -7,8 +7,8 @@
     <img src="https://img.shields.io/static/v1?label=min-HUGO-version&message=0.100.0&color=f00&logo=hugo" />
   </a>
 
-  <a href="https://github.com/simon-laszlo/educenter-hugo/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/themefisher/educenter-hugo" alt="license"></a>
+  <a href="https://github.com/simon-laszlo/timeline-cv-hugo/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/simon-laszlo/timeline-cv-hugo" alt="license"></a>
 
 </p>
 
