@@ -1,0 +1,23 @@
+{{ "<!-- Header -->" | safeHTML }}
+<section id="personality" class="is-flex-grow-1">
+    <header class="">
+        <p class="card-header-title has-text-black is-size-6">
+            Personality traits
+        </p>
+    </header>
+    <div class="card-content">
+        <div class="columns">
+            <div class="column is-one-fifths"></div>
+            <div>
+                {{ range .Site.Params.Personality.showcase }}
+                <ul>
+                    {{ range .traits }}
+                    <li class="is-size-6"> {{.}} </li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </div>
+            <div class="column is-three-fifths"></div>
+        </div>
+    </div>
+</section>

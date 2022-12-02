@@ -1,0 +1,43 @@
+{{ define "main" }}
+
+			{{- partial "banner.html" . -}}
+
+		{{ "<!-- Main -->" | safeHTML }}
+			<div id="main">
+
+				{{ if .Site.Params.Projects.enable }}
+					{{ partial "project.html" . }}
+				{{ end }}
+
+				{{ if .Site.Params.Educations.enable }}
+					{{ partial "education.html" . }}
+				{{ end }}
+
+				{{ if .Site.Params.Languages.enable }}
+					{{ partial "languages.html" . }}
+				{{ end }}
+
+				{{ if .Site.Params.Personality.enable }}
+					{{ partial "personality.html" . }}
+				{{ end }}
+
+				{{ if .Site.Params.Knowledges.enable }}
+					{{ partial "knowledges.html" . }}
+				{{ end }}
+				
+			</div>
+
+		{{ "<!-- Contact -->" | safeHTML}}
+			{{ if .Site.Params.Contact.enable }}
+				{{ partial "contact.html" . }}
+			{{ end }}
+
+		</div>
+		<button class="button is-primary" onclick="topFunction()" id="topBtn" title="Go to top">
+			<i class="fa-solid fa-chevron-up"></i>
+		</button>
+
+	{{ "<!-- Scripts -->" | safeHTML}}
+		{{ partial "js.html" . }}
+
+	{{ end }}

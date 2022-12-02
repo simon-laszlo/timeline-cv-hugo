@@ -1,0 +1,107 @@
+{{ "<!-- Header -->" | safeHTML }}
+    <section id="projects" class="tiles card">
+        <header class="card-header card-toggle">
+            <p class="card-header-title has-text-white is-size-6">
+                Work experiences
+            </p>
+            <a href="#collapsible-card" class="card-header-icon is-hidden-fullscreen" aria-label="more options">
+                <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+            </a>
+        </header>
+        <div id="collapsible-card" class="card-content">
+            <div class="card-content">
+                <div>
+                    <div>
+                        <p class="has-text-white is-size-4">Job changes:</p>
+                    </div>
+                    <ul>
+                    {{ range .Site.Params.Projects.showcase }}
+                        {{ if .new_job }}
+                            <li class="is-inline"><a href="#{{ .start_at}}">-{{ .start_at}}</a></li>
+                        {{ end }}
+                    {{ end }}
+                    </ul>
+                </div>
+                <div class="timeline is-centered">
+                    <header class="timeline-header">
+                    </header>
+                {{ range .Site.Params.Projects.showcase }}
+                    <div class="timeline-item">
+                        {{ if .new_job }}
+                            <div class="timeline-marker is-info is-icon">
+                                <i class="fa-solid fa-handshake-angle"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <p id={{ .start_at}} class="has-text-white is-size-6">{{ .start_at }}</p>
+                                <div class="notification is-info">
+                                    <p class="is-size-5">{{ .employee }}</p>
+                                    <p class="has-text-weight-semibold">{{ .location }}</p>
+                                </div>
+                            </div>
+                        {{ else }}
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                            <p class="has-text-white is-size-6">{{ .start_at }}</p>
+                                <div class="notification has-background-white">
+                                    <div class="field is-horizontal">
+                                        <div class="field-label">
+                                        <label class="label is-underlined has-text-weight-bold">Role:</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <p class="has-text-weight-semibold">{{ .role }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field is-horizontal">
+                                        <div class="field-label">
+                                        <label class="label is-underlined has-text-weight-bold">Project:</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <p>{{ .subtitle }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field is-horizontal">
+                                        <div class="field-label">
+                                        <label class="label is-underlined has-text-weight-bold">Description:</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <ul>
+                                                    {{ range .tasks}}
+                                                        <li><p>{{.}}</p></li>
+                                                    {{ end }}
+                                                    </ul>
+                                            </div>
+                                        </div>
+                                    </div>                            
+                                    <div class="field is-horizontal">
+                                        <div class="field-label">
+                                        <label class="label is-underlined has-text-weight-bold">Technologies:</label>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <p class="is-size-7 has-text-weight-semibold">[
+                                                    {{ range .technologies}}
+                                                        {{.}},
+                                                    {{ end }}
+                                                    ]</p>
+                                            </div>
+                                        </div>
+                                    </div>            
+                                </div>
+                            </div>
+                        {{ end }}
+                    </div>
+                {{ end }}
+                <div class="timeline-header">
+                    <span class="tag is-medium is-primary">Start</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

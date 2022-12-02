@@ -1,0 +1,44 @@
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	{{ if eq (getenv "HUGO_ENV") "production" }}
+	<meta name="robots" content="index,follow">
+	{{ else }}
+	<meta name="robots" content="noindex,nofollow">
+	{{ end }}
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+	<meta name="keywords" content="{{ if .Params.Keywords }}{{ delimit .Params.Keywords ", " }}{{ end }}">
+	<meta	name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Something hardcoded{{ end }}"/>
+	{{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
+	<title>{{ .Title }}{{ if not .IsHome }} &middot; {{ .Site.Title }}{{ end }}</title>
+	{{ "<!-- Stylesheets -->" | safeHTML }}
+	{{ $sass := resources.Get "/sass/main.sass" }}
+	{{ $style := $sass | resources.ToCSS  | resources.Minify }}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}"/>
+
+	{{ if not .IsHome }}
+		<script src="/js/jspdf/jspdf.umd.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	{{ end }}
+
+	{{ $css := resources.Get "css/main.css" }}
+	{{ $style := $css | resources.Minify }}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}"/>
+
+	{{ range .Site.Params.custom_css }}
+		<link rel="stylesheet" href="{{ . | absURL }}">
+	{{ end }}
+
+	{{ "<!-- Custom Fonts -->" | safeHTML }}
+	<script type='text/javascript'>
+		//<![CDATA[ 
+		function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet preload"; i.href = e; i.media = "only x"; i.as="style"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }loadCSS({{ "css/fa/all.min.css" | absURL }});
+		//]]> 
+	</Script>
+
+	{{ with .Site.Params.favicon }}
+	<link rel="shortcut icon" type="image/x-icon" href="{{ . | absURL }}">
+	<link rel="icon" type="image/x-icon" href="{{ . | absURL }}">
+	{{ end }}
+
+</head>

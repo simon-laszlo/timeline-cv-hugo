@@ -1,0 +1,67 @@
+{{ "<!-- Banner -->" | safeHTML}}
+<section id="personal" class="is-flex-grow-1">
+    <header class="card-toggle">
+        <p class="card-header-title has-text-black is-size-6">
+            Personal Data
+        </p>
+    </header>
+    <div class="card-content">
+        <div class="columns">
+            <div class="column is-half">
+            <div class="columns">
+                <div class="column">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="columns">
+                                <div class="column pb-0 pt-0">
+                                    Name:
+                                </div>
+                                <div class="column pb-0 pt-0">
+                                    {{ .Site.Params.name }}
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column pb-0 pt-0">
+                                    Date of birth:
+                                </div>
+                                <div class="column pb-0 pt-0">
+                                    {{ .Site.Params.dirthday }}
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column pb-0 pt-0">
+                                    Nationality:
+                                </div>
+                                <div class="column pb-0 pt-0">
+                                    {{ .Site.Params.nationality }}
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column pb-0 pt-0">
+                                    Address:
+                                </div>
+                                <div class="column pb-0 pt-0">
+                                    {{ .Site.Params.address }}
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column pb-0 pt-0">
+                                    Mobile:
+                                </div>
+                                <div class="column pb-0 pt-0">
+                                    {{ .Site.Params.phone }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="column is-half">
+                <figure class="image is-128x128 is-pulled-right pt-3">
+                    <img src="{{ .Site.Params.baseURL }}/img/{{ .Site.Params.image }}" alt="" />
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>

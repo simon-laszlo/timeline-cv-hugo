@@ -1,0 +1,27 @@
+{{ "<!-- Header -->" | safeHTML }}
+    <section id="knowledges" class="tiles">
+        <header class="">
+            <p class="card-header-title has-text-black is-size-6">
+                Knowledges
+            </p>
+        </header>
+        <div id="collapsible-card" class="card-content">
+            {{ range .Site.Params.Knowledges.showcase }}
+                    <div class="columns">
+                        <div class="column is-size-6 pb-0 pt-0">{{ .knowledge}}</div>
+                        <div class="column is-size-6 pb-0 pt-0">
+                            <ul>
+                                {{ $len := (len .details) }}
+                                    {{ range $i, $e := .details }}
+                                    {{ if eq (add $i 1) $len}}
+                                        <li class="is-inline">{{.}}</li>
+                                    {{ else }}
+                                        <li class="is-inline">{{.}},</li>
+                                    {{ end }}
+                                {{ end }}
+                            </ul>
+                        </div>
+                    </div>
+                {{ end }}
+        </div>
+</section>

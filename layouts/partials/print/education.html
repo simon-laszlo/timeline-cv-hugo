@@ -1,0 +1,17 @@
+{{ "<!-- Header -->" | safeHTML }}
+    <section id="educations" class="">
+        <header class="">
+            <p class="card-header-title has-text-black is-size-6">
+                Educations
+            </p>
+        </header>
+            <div class="card-content">
+                {{ range .Site.Params.Educations.showcase }}
+                    <div class="columns">
+                        <div class="column is-size-6 pb-0 pt-0">{{ .start_at}}</div>
+                        <div class="column is-size-6 pb-0 pt-0">{{ .school}}</div>
+                        <div class="column is-size-6 pb-0 pt-0">{{ .details}}</div>
+                    </div>
+                {{ end }}
+        </div>
+</section>

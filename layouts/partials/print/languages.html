@@ -1,0 +1,24 @@
+{{ "<!-- Header -->" | safeHTML }}
+    <section id="educations" class="">
+        <header class="card-toggle">
+            <p class="card-header-title has-text-black is-size-6">
+                Languages
+            </p>
+        </header>
+            <div class="card-content">
+                <div class="columns">
+                    <div class="column is-size-6 is-underlined has-text-weight-bold">language</div>
+                    <div class="column is-size-6 is-underlined has-text-weight-bold">speak</div>
+                    <div class="column is-size-6 is-underlined has-text-weight-bold">write</div>
+                    <div class="column is-size-6 is-underlined has-text-weight-bold">read</div>
+                </div>
+            {{ range .Site.Params.Languages.showcase }}
+                    <div class="columns">
+                        <div class="column is-size-6 pb-0 pt-0">{{ .language}}</div>
+                        <div class="column is-size-6 pb-0 pt-0">{{ .speak}}</div>
+                        <div class="column is-size-6 pb-0 pt-0">{{ .write}}</div>
+                        <div class="column is-size-6 pb-0 pt-0">{{ .read}}</div>
+                    </div>
+                {{ end }}
+    </div>
+</section>

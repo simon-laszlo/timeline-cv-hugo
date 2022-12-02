@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+  {{- partial "header.html" . -}}
+
+<body>
+  {{ "<!-- Wrapper -->" | safeHTML }}
+  <div class="container">
+    {{ if .IsHome }}
+      {{- partial "nav.html" . -}}
+    {{ else }}
+      {{- partial "print/nav.html" . -}}
+    {{ end }}
+    {{- block "main" . }}{{- end }}
+  </div>
+</body>
+
+</html>

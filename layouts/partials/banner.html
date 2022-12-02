@@ -1,0 +1,19 @@
+{{ "<!-- Banner -->" | safeHTML}}
+    <section class="section">
+        <div class="content columns is-mobile is-centered">
+            <div class="column is-half has-text-centered">
+                <figure class="image is-inline-block">
+                    <img class="is-rounded is-128x128 " src="{{ .Site.Params.baseURL }}/img/{{ .Site.Params.image }}" alt="" />
+                </figure>
+                <h1 class="has-text-white">{{ .Site.Params.name }}</h1>
+                <p class="has-text-white">{{ .Site.Params.description }}</p>
+                <div>
+                    <ul class="icons ml-0">
+                        {{ range .Site.Params.Footer.social }}
+                            <li class="is-inline is-size-4"><a href="{{ .url | safeHTML }}" class="{{ .icon }} has-text-white" {{if .blank}} target="_blank" {{end}}arial-label="{{ .label }}"></a></li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
