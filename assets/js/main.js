@@ -1,16 +1,37 @@
 import * as params from '@params';
 
 document.addEventListener('DOMContentLoaded', function() {
-	let cardToggles = document.getElementsByClassName('card-toggle');
+	const cardToggles = document.getElementsByClassName('card-toggle');
 	for (let i = 0; i < cardToggles.length; i++) {
 		cardToggles[i].addEventListener('click', e => {
 			e.currentTarget.parentElement.childNodes[3].classList.toggle('is-hidden');
 			showEmail();
 		});
 	}
-});
+	window.onscroll = function()
+	{
+		 showEmail();
+	}
+	const printBtn = document.getElementById('print');
+	if (!!printBtn) {
+		printBtn.addEventListener('click', e => {
+			printPdf();
+		});
+	}
+	const topBtn = document.getElementById('topBtn');
+	if (!!topBtn) {
+		topBtn.addEventListener('click', e => {
+			topFunction();
+		});
+	}
+	const burger = document.getElementById('burger');
+	if (!!burger) {
+		burger.addEventListener('click', e => {
+			toggleBurger();
+		});
+	}
 
-let mybutton = document.getElementById("topBtn");
+});
 
 window.onscroll = function() {scrollFunction()};
 
@@ -28,7 +49,7 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-function printPdf(name) {
+function printPdf() {
 	const { jsPDF } = window.jspdf;
 	var source = document.getElementById("book");
 	console.log(source);
@@ -90,12 +111,4 @@ function showEmail() {
 			fn(a, liame[i], i);
 		}
 	}
-}
-
-window.onload = function()
-{
-   window.onscroll = function()
-   {
-      showEmail();
-   }
 }
