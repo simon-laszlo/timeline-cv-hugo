@@ -29,6 +29,6 @@
         <script src="{{ . | absURL }}"></script>
     {{ end }}
 
-    {{ $js := resources.Get "/js/main.js" | js.Build (dict "params" (dict "email" .Site.Params.email)) }}
+    {{ $js := resources.Get "/js/main.js" | js.Build (dict "params" (dict "email" .Site.Params.email "pdf_file" .Site.Params.pdf_file)) }}
 	{{ $script := $js | resources.Minify }}
 	<script src="{{ $script.RelPermalink }}"></script>
