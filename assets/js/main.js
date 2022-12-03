@@ -33,14 +33,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() {getScrollFunction()()};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+function getScrollFunction() {
+	const topBtn = document.getElementById('topBtn');
+	const scrollFunction = function () {
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			topBtn.style.display = "block";
+	  } else {
+		topBtn.style.display = "none";
+	  }
+	}
+	return scrollFunction;	
 }
 
 // When the user clicks on the button, scroll to the top of the document
