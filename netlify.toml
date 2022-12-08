@@ -1,8 +1,10 @@
 
 # example netlify.toml
 [build]
-  command = "hugo"
-  publish = "public"
+  command = "hugo -s exampleSite"
+  publish = "exampleSite/public"
 
 [build.environment]
   HUGO_VERSION = "0.101.0"
+  HUGO_THEME = "repo"
+  HUGO_BASEURL = "/"
