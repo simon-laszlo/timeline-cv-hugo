@@ -14,7 +14,7 @@
 
 ---
 ## Key Features
-- Matomo analytics  support
+- Matomo analytics support
 - Timeline view
 - A4 view
 - client side pdf export
@@ -37,6 +37,14 @@ $ cd timeline-cv-hugo/exampleSite/
 $ hugo server --themesDir ../..
 ```
 
+## Create a new hugo site
+```bash
+hugo new site my_cv
+cd my_cv
+git init
+git submodule add https://github.com/simon-laszlo/timeline-cv-hugo
+echo "theme = 'timeline-cv-hugo'" >> config.toml
+```
 
 ## Deployment and hosting
 
