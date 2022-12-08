@@ -5,6 +5,7 @@ title = 'Demo User'
 enableRobotsTXT = true
 
 theme = "timeline-cv-hugo"
+themesdir = "../.."
 
 [sitemap]
   changefreq = "weekly"
