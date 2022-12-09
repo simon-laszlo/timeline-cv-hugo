@@ -1,7 +1,7 @@
 <h1 align=center>Timeline CV Hugo</h1> 
 <p align=center> Timeline CV is a Hugo theme designed specifically for CV websites. This theme is packed with elements that you need to show info about your experiences, school, personality, and contacts. </p>
 
-<h2 align="center"> <a target="_blank" href="https://incandescent-cuchufli-240951.netlify.app/" rel="nofollow">Demo</a></h2>
+<h2 align="center"> <a target="_blank" href="https://timelinecv.netlify.app/" rel="nofollow">Demo</a></h2>
 
 <p align=center>
   <a href="https://github.com/gohugoio/hugo/releases/tag/v0.100.0" alt="Contributors">
