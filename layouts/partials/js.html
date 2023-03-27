@@ -31,4 +31,4 @@
 
     {{ $js := resources.Get "/js/main.js" | js.Build (dict "params" (dict "email" .Site.Params.email "pdf_file" .Site.Params.pdf_file)) }}
 	{{ $script := $js | resources.Minify }}
-	<script src="{{ $script.RelPermalink }}" async></script>
+	<script src="{{ $script.RelPermalink }}"></script>
