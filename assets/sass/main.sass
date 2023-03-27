@@ -1,9 +1,81 @@
 @import ./bulma/sass/utilities/initial-variables.sass
-$scheme-main: #152028;
-$scheme-invert: $white;
-$timeline-icon-size: $size-4;
-$timeline-marker-icon-size: $size-2;
-$card-shadow: 0 .5em 1em -.125em rgba(0,0,0,.5),0 0 0 1px rgba(0,0,0,50%);
-$card-header-shadow: 0 .5em 1em -.125em rgba(0,0,0,.5),0 0 0 1px rgba(0,0,0,50%);
-@import "./bulma/bulma.sass";
-@import "./bulma-timeline/src/sass/index.sass";
+$scheme-main: #152028
+$scheme-invert: $white
+$timeline-icon-size: $size-4
+$timeline-marker-icon-size: $size-2
+$card-shadow: 0 .5em 1em -.125em rgba(0,0,0,.5),0 0 0 1px rgba(0,0,0,50%)
+$card-header-shadow: 0 .5em 1em -.125em rgba(0,0,0,.5),0 0 0 1px rgba(0,0,0,50%)
+@import "./bulma/bulma.sass"
+@import "./bulma-timeline/src/sass/index.sass"
+
+.fh
+  min-height: 297mm
+
+.page
+  width: 210mm
+  min-height: 297mm
+  margin: 5mm auto
+  border-radius: 5px
+  background: white
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)
+
+.subpage
+  padding: 1cm
+  height: 257mm
+  outline: 2cm #FFEAEA solid
+
+@page
+  size: A4
+  margin: 0
+
+@media print
+  html, body
+    width: 210mm
+    height: 297mm
+
+  .page
+    margin: 0
+    border: initial
+    border-radius: initial
+    width: initial
+    min-height: initial
+    box-shadow: initial
+    background: initial
+    page-break-after: always
+
+#topBtn
+  display: none
+  position: fixed
+  bottom: 20px
+  right: 30px
+  z-index: 99
+  &:hover
+    background-color: #555
+
+.card-header
+  cursor: pointer
+
+.dark
+  background-color: #107ab0
+
+.date-color
+  color: #083d58
+
+.cv-first-column
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+.cv-second-column
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+ul.is-unstyled
+  list-style: none
+  margin: 0
+  padding: 0
+
+.linkedin
+  background-color: white
+  -webkit-mask: url(/images/linkedin_1.png) no-repeat center
+  mask: url(/images/linkedin_1.png) no-repeat center
+  width: 300px

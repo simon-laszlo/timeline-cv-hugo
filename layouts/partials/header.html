@@ -21,10 +21,6 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 	{{ end }}
 
-	{{ $css := resources.Get "css/main.css" }}
-	{{ $style := $css | resources.Minify }}
-	<link rel="stylesheet" href="{{ $style.RelPermalink }}"/>
-
 	{{ range .Site.Params.custom_css }}
 		<link rel="stylesheet" href="{{ . | absURL }}">
 	{{ end }}

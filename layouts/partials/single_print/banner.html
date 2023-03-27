@@ -6,10 +6,12 @@
             </figure>
             <div class="is-size-2 has-text-white">{{ .Site.Params.name }}</div>
             <p class="has-text-white">{{ .Site.Params.description }}</p>
-            <div>
-                <ul class="icons ml-0">
+            <hr/>
+            <div class="content has-text-left">
+                <h4 class="has-text-white">Contact info</h3>
+                <ul class="is-unstyled has-text-left">
                     {{ range .Site.Params.Footer.social }}
-                        <li class="is-inline is-size-4"><a href="{{ .url | safeHTML }}" class="{{ .icon }} has-text-white" {{if .blank}} target="_blank" {{end}}arial-label="{{ .label }}"></a></li>
+                        <li class="is-size-6"><a href="{{ .url | safeHTML }}" class="has-text-white" {{if .blank}} target="_blank" {{end}}arial-label="{{ .label }}"><img src="/images/{{ .png }}.png" width="15px">{{ .url }}</img></a></li>
                     {{ end }}
                 </ul>
             </div>
