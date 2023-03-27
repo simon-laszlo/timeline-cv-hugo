@@ -17,8 +17,8 @@
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}"/>
 
 	{{ if not .IsHome }}
-		<script src="/js/jspdf/jspdf.umd.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+		<script src="/js/jspdf/jspdf.umd.min.js" defer async></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer async></script>
 	{{ end }}
 
 	{{ range .Site.Params.custom_css }}
@@ -26,11 +26,11 @@
 	{{ end }}
 
 	{{ "<!-- Custom Fonts -->" | safeHTML }}
-	<script type='text/javascript'>
+	<script type='text/javascript' defer async>
 		//<![CDATA[ 
 		function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet preload"; i.href = e; i.media = "only x"; i.as="style"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }loadCSS({{ "css/fa/all.min.css" | absURL }});
 		//]]> 
-	</Script>
+	</script>
 
 	{{ with .Site.Params.favicon }}
 	<link rel="shortcut icon" type="image/x-icon" href="{{ . | absURL }}">
