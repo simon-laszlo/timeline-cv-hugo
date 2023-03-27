@@ -1,0 +1,181 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Demo User'
+
+enableRobotsTXT = true
+
+theme = "timeline-cv-hugo"
+themesdir = "../.."
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[params]
+
+  name = "Demo User"
+  description = "Senior backend developer"
+  dirthday = "11.11.1986"
+  nationality = "worldwide"
+  address = "CH-8050 Zürich"
+  phone = "0041 12 234 1233"
+  image = "man.webp"
+  email = [0x79,0x6f,0x72,0x65,0x6d,0x61,0x69,0x6c,0x40,0x67,0x6d,0x61,0x69,0x6c,0x2e,0x63,0x6f,0x6d]
+  pdf_file = "my_cv"
+
+    [params.matomo]
+    enable = false
+    url = "your host"
+    id = "1"
+
+    [params.projects]
+    enable = true
+    # Display your showcases here.
+    [[params.projects.showcase]]
+      start_at = "03.2022"
+      period = "03.2022 -"
+      location = "Switzerland, Zürich"
+      employee = "IT DEV GmbH"
+      project_owner = "IT DEV GmbH"
+      role = "developer"
+      subtitle = "Android app"
+      technologies = ["Kotlin", "Android"]
+      tasks = ["Android app based on kotlin"
+              ]
+
+
+    [[params.projects.showcase]]
+      new_job = true
+      year = "2015"
+      start_at = "10.2015"
+      location = "Switzerland, Zürich"
+      employee = "IT DEV GmbH"
+
+    [[params.projects.showcase]]
+      start_at = "05.2011"
+      period = "05.2011 - 10.2015"
+      location = "Switzerland, Bern"
+      employee = "IT Company AG"
+      project_owner = "IT Company AG"
+      role = "Java developer"
+      subtitle = "Web application development"
+      technologies = ["Java", "GWT", "JPA", "Hibernate", "Lucene", "JEE6", "JBoss", "MySql", "Glassfish", "EclipseLink", "PrimeFaces", "CDI", "Scrum"]
+      tasks = ["SW development..."]
+
+    [[params.projects.showcase]]
+      new_job = true
+      year = "2011"
+      start_at = "05.2011"
+      location = "Switzerland, Bern"
+      employee = "IT Company AG"
+
+  [params.main.projects]
+    enable = true
+    # Display your showcases here.
+    [[params.main.projects.showcase]]
+      company = "Company1"
+      city = "Zürich"
+      range = "August 2015 - April 2023"
+      role = "Full Stack Developer"
+      description = "Description:"
+      details = ["dev1", "dev2"]
+
+    [[params.main.projects.showcase]]
+      company = "Co. AG"
+      city = "Bern"
+      range = "Mai 2011 - Oktober 2015"
+      role = "Java Developer"
+      description = "Description:"
+      details = ["dev1", "dev2"]
+
+  [params.personality]
+    enable = true
+
+    [[params.personality.showcase]]
+      traits = ["teamplayer", "self-motivated", "flexible", "open-minded", "or what you want"]
+
+  [params.knowledges]
+    enable = true
+
+    [[params.knowledges.showcase]]
+      knowledge = "revision control systems:"
+      details = ["SVN", "CVS", "GIT"]
+
+    [[params.knowledges.showcase]]
+      knowledge = "build tools:"
+      details = ["ANT", "Maven", "Gradle", "Cargo"]
+
+  [params.educations]
+    enable = true
+
+    [[params.educations.showcase]]
+      start_at = "1998-2003"
+      school = "ETH Zürich"
+      details = "IT"
+
+    [[params.educations.showcase]]
+      start_at = "1993-1998"
+      school = "School bern"
+
+  [params.languages]
+    enable = true
+
+    [[params.languages.showcase]]
+      language = "German"
+      speak = "prof"
+      write = "prof"
+      read = "prof"
+      value = 100
+
+    [[params.languages.showcase]]
+      language = "English"
+      speak = "advanced"
+      write = "advanced"
+      read = "advanced"
+      value = 90
+
+  [params.skills]
+    enable = true
+    description = "Full stack Java / JavaScript software developer with extensive experience in the development of new applications and their operation and further development. In-depth knowledge of different frameworks such as JEE, Spring, JPA, Hibernate, Kafka and many more. Extensive experience using many different tools such as Git, Maven, Gradle, splunk, grafana, OpenShift, Redmine, Jira, Jenkins and many more. An open, technology-savvy and very team-oriented person who can easily deal with complexity in different situations"
+    cloud_tag = "wordcloud.webp"
+
+  # Contact section
+  [params.contact]
+    enable = true
+
+  [params.footer]
+    enable = true
+
+    # Uses font awesome icons
+    [[params.footer.social]]
+      icon = "fa-solid fa-envelope"
+      png = "envelope"
+      url= "#contact"
+      short = "email@server.domain"
+      label = "Contact"
+
+    [[params.footer.social]]
+      icon = "fa-solid fa-mobile"
+      png = "mobile"
+      url = "#mobile"
+      short = "your bumber"
+      label = "Mobile"      
+    
+    [[params.footer.social]]
+      icon = "fa-brands fa-github"
+      png = "github"
+      url= "yoururl"
+      short = "http://..."
+      label = "GitHub"
+      blank = true
+
+    [[params.footer.social]]
+      icon = "fa-brands fa-linkedin"
+      png = "linkedin"
+      url= "your linkedin"
+      short = "http://..."
+      label = "LinkedIn"
+      blank = true
+
+   
