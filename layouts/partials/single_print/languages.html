@@ -1,0 +1,12 @@
+{{ "<!-- Header -->" | safeHTML }}
+<div class="content">
+    <h4 class="has-text-white">Languages</h3>
+        {{ range .Site.Params.Languages.showcase }}
+            <div class="has-text-white">
+                <div class="is-size-6 pb-0 pt-0">{{ .language}}</div>
+                <div id="progressOuterMax" style = "width: 100%; background: #eceeef; position: relative; padding: 0px;">
+                    <div id="barStatus" style="height: 10px; background-color: #083d58; width: {{ .value }}%;"></div>
+               </div>
+            </div>
+        {{ end }}
+</div>

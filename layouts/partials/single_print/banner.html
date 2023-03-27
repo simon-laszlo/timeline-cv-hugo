@@ -1,0 +1,25 @@
+{{ "<!-- Banner -->" | safeHTML}}
+    <div class="content is-mobile is-centered">
+        <div class="is-half has-text-centered">
+            <figure class="image is-inline-block mb-0 mt-3">
+                <img class="is-rounded is-128x128 " src="{{ .Site.Params.baseURL }}/img/{{ .Site.Params.image }}" alt="" />
+            </figure>
+            <div class="is-size-2 has-text-white">{{ .Site.Params.name }}</div>
+            <p class="has-text-white">{{ .Site.Params.description }}</p>
+            <hr/>
+            <div class="content has-text-left">
+                <h4 class="has-text-white">Contact info</h3>
+                <ul class="is-unstyled has-text-left">
+                    {{ range .Site.Params.Footer.social }}
+                        {{ if eq .label "Contact" }}
+                            <li class="is-size-6"><a href="mailto: {{ .short | safeHTML }}" class="has-text-white" arial-label="{{ .label }}"><img src="{{ .Site.Params.baseURL }}/img/{{ .png }}.png" width="15px"> {{ .short }}</img></a></li>
+                        {{ else if eq .label "Mobile"}}
+                            <li class="is-size-6 has-text-white"><img src="{{ .Site.Params.baseURL }}/img/{{ .png }}.png" width="15px"> {{ .short }}</img></li>
+                        {{ else }}
+                            <li class="is-size-6"><a href="//{{ .short | safeHTML }}" class="has-text-white" {{if .blank}} target="_blank" {{end}}arial-label="{{ .label }}"><img src="{{ .Site.Params.baseURL }}/img/{{ .png }}.png" width="15px"> {{ .short }}</img></a></li>
+                        {{ end }}
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>

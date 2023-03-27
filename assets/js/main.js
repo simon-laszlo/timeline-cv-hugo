@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	window.onscroll = function()
 	{
 		 showEmail();
+		 getScrollFunction()();
 	}
 	const printBtn = document.getElementById('print');
 	if (!!printBtn) {
@@ -32,8 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 });
-
-window.onscroll = function() {getScrollFunction()()};
 
 function getScrollFunction() {
 	const topBtn = document.getElementById('topBtn');
@@ -64,7 +63,7 @@ function printPdf() {
 			window.open(URL.createObjectURL(doc.output("blob")))
 		},
 		x: 0,
-    y: -8,
+    y: -3,
     width: 210, //target width in the PDF document
     windowWidth: 805, //window width in CSS pixels,
 	});

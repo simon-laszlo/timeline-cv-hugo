@@ -1,0 +1,25 @@
+{{ "<!-- Header -->" | safeHTML }}
+    <section class="tiles pt-4 is-flex-grow-1">
+        <header class="">
+            <p class="is-size-5 has-text-weight-bold pb-3">
+                Work experiences
+            </p>
+        </header>
+        <div id="collapsible-card">
+            <div class="content">
+            {{ range .Site.Params.Main.Projects.showcase }}
+            <p class="is-size-7 has-text-weight-bold mb-1">{{ .company }}, <span>{{ .city }}</span><span> - {{ .role }}</span></p>
+            <p class="is-size-7 mb-2">{{ .range }}</p>
+                    <p class="is-size-7">{{ .description }}</p>
+                    <ul class="has-text-justified mt-0">
+                        {{ range $i, $e := .details }}
+                            <li class="is-size-7">
+                                {{.}}
+                            </li>
+                        {{ end }}
+                    </ul>
+                    <p class="is-size-7">{{ .stack }}</p>
+            {{ end }}
+        </div>
+        </div>
+    </section>

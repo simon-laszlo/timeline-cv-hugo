@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+{{ "<!-- Main -->" | safeHTML }}
+<div id="main">
+
+  {{$page := 1}}
+  <div id="book" class="book">
+    <div class="page">
+      <div class="columns is-gapless">
+        <div class="column dark is-one-third cv-first-column">
+          <section class="fh p-3">
+            {{- partial "single_print/banner.html" . -}}
+            {{- partial "single_print/education.html" . -}}
+            {{- partial "single_print/languages.html" . -}}
+            {{- partial "single_print/skills.html" . -}}
+          </section>
+        </div>
+        <div class="column cv-second-column">
+          <section class="fh p-3">
+            <div class="card-image has-text-centered">
+              <img src="{{ .Site.Params.baseURL }}/img/{{ .Site.Params.Skills.cloud_tag }}" width="250px"/>
+            </div>
+            {{- partial "single_print/main_project.html" . -}}
+          </section>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{{ "<!-- Scripts -->" | safeHTML}}
+{{ partial "js.html" . }}
+
+{{ end }}
