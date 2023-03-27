@@ -16,7 +16,7 @@
                         {{ else if eq .label "Mobile"}}
                             <li class="is-size-6 has-text-white"><img src="{{ .Site.Params.baseURL }}/img/{{ .png }}.png" width="15px"> {{ .short }}</img></li>
                         {{ else }}
-                            <li class="is-size-6"><a href="{{ .short | safeHTML }}" class="has-text-white" {{if .blank}} target="_blank" {{end}}arial-label="{{ .label }}"><img src="{{ .Site.Params.baseURL }}/img/{{ .png }}.png" width="15px"> {{ .short }}</img></a></li>
+                            <li class="is-size-6"><a href="//{{ .short | safeHTML }}" class="has-text-white" {{if .blank}} target="_blank" {{end}}arial-label="{{ .label }}"><img src="{{ .Site.Params.baseURL }}/img/{{ .png }}.png" width="15px"> {{ .short }}</img></a></li>
                         {{ end }}
                     {{ end }}
                 </ul>
