@@ -12,10 +12,90 @@ themesdir = "../.."
   filename = "sitemap.xml"
   priority = 0.5
 
+DefaultContentLanguage = "en"
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+  [languages.de]
+    title = "Demo Benutzer"
+    languageName = "Deutsch"
+    weight = 2
+    [languages.de.params]
+      description = "Senior Full Stack Entwickler"
+      birthdate_lbl = "Geburtstag:"
+      nationality_lbl = "Staatsangehörigkeit:"
+      nationality = "deutsch"
+      address_lbl = "Adresse:"
+    [languages.de.params.projects]
+      enable = true
+    # Display your showcases here.
+    [[languages.de.params.projects.showcase]]
+      start_at = "03.2022"
+      period = "03.2022 -"
+      location = "Switzerland, Zürich"
+      employee = "IT DEV GmbH"
+      project_owner = "IT DEV GmbH"
+      role = "Entwickler"
+      subtitle = "Android app"
+      technologies = ["Kotlin", "Android"]
+      tasks = ["Android Anwendung mit Kotlin"
+              ]
+
+
+    [[languages.de.params.projects.showcase]]
+      new_job = true
+      year = "2015"
+      start_at = "10.2015"
+      location = "Switzerland, Zürich"
+      employee = "IT DEV GmbH"
+
+    [[languages.de.params.projects.showcase]]
+      start_at = "05.2011"
+      period = "05.2011 - 10.2015"
+      location = "Switzerland, Bern"
+      employee = "IT Company AG"
+      project_owner = "IT Company AG"
+      role = "Java Entwickler"
+      subtitle = "Web Anwendung Entwicklung"
+      technologies = ["Java", "GWT", "JPA", "Hibernate", "Lucene", "JEE6", "JBoss", "MySql", "Glassfish", "EclipseLink", "PrimeFaces", "CDI", "Scrum"]
+      tasks = ["SW Entwicklung..."]
+
+    [[languages.de.params.projects.showcase]]
+      new_job = true
+      year = "2011"
+      start_at = "05.2011"
+      location = "Switzerland, Bern"
+      employee = "IT Company AG"
+
+  [languages.de.params.main.projects]
+    enable = true
+    # Display your showcases here.
+    [[languages.de.params.main.projects.showcase]]
+      company = "Company1"
+      city = "Zürich"
+      range = "August 2015 - April 2023"
+      role = "Full Stack Entwickler"
+      description = "Beschreibung:"
+      details = ["dev1", "dev2"]
+
+    [[languages.de.params.main.projects.showcase]]
+      company = "Co. AG"
+      city = "Bern"
+      range = "Mai 2011 - Oktober 2015"
+      role = "Java Entwickler"
+      description = "Beschreibung:"
+      details = ["dev1", "dev2"]
+
 [params]
 
   name = "Demo User"
   description = "Senior backend developer"
+  birthdate_lbl = "Date of birth:"
+  nationality_lbl = "Nationality:"
+  address_lbl = "Address:"
+  mobile_lbl = "Mobile:"  
   dirthday = "11.11.1986"
   nationality = "worldwide"
   address = "CH-8050 Zürich"

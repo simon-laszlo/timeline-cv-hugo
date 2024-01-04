@@ -1,19 +1,18 @@
 ---
-title: "Print view"
+title: "László Simon"
 date: 2022-11-23T13:36:51+01:00
 draft: false
-type: "print"
-work_experiences: "Work experiences:"
+work_experiences: "Work experiences"
 period: "Period:"
 company: "Company:"
 role: "Role:"
 project: "Project:"
 description: "Description:"
 technologies: "Technologies:"
-personality_traits: "Personality traits:"
+personality_traits: "Personality traits"
 back: "Back"
 open: "Open"
-languages: "Languages:"
+languages: "Languages"
 language: "language"
 read: "read"
 write: "write"
@@ -21,3 +20,4 @@ speak: "speak"
 knowledges: "Knowledges"
 educations: "Educations"
 ---
+

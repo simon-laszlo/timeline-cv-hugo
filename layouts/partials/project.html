@@ -2,7 +2,7 @@
     <section id="projects" class="tiles card">
         <header class="card-header card-toggle">
             <p class="card-header-title has-text-white is-size-6">
-                Work experiences
+                {{ .Params.work_experiences }}
             </p>
             <a href="#collapsible-card" class="card-header-icon is-hidden-fullscreen" aria-label="more options">
                 <span class="icon">
@@ -14,7 +14,7 @@
             <div class="card-content">
                 <div>
                     <div>
-                        <p class="has-text-white is-size-4">Job changes:</p>
+                        <p class="has-text-white is-size-4">{{ .Params.period }}</p>
                     </div>
                     <ul>
                     {{ range .Site.Params.Projects.showcase }}
@@ -47,7 +47,7 @@
                                 <div class="notification has-background-white">
                                     <div class="field is-horizontal">
                                         <div class="field-label">
-                                        <label class="label is-underlined has-text-weight-bold">Role:</label>
+                                        <label class="label is-underlined has-text-weight-bold">{{ $.Params.role }}</label>
                                         </div>
                                         <div class="field-body">
                                             <div class="field">
@@ -57,7 +57,7 @@
                                     </div>
                                     <div class="field is-horizontal">
                                         <div class="field-label">
-                                        <label class="label is-underlined has-text-weight-bold">Project:</label>
+                                        <label class="label is-underlined has-text-weight-bold">{{ $.Params.project }}</label>
                                         </div>
                                         <div class="field-body">
                                             <div class="field">
@@ -67,7 +67,7 @@
                                     </div>
                                     <div class="field is-horizontal">
                                         <div class="field-label">
-                                        <label class="label is-underlined has-text-weight-bold">Description:</label>
+                                        <label class="label is-underlined has-text-weight-bold">{{ $.Params.description }}</label>
                                         </div>
                                         <div class="field-body">
                                             <div class="field">
@@ -81,7 +81,7 @@
                                     </div>                            
                                     <div class="field is-horizontal">
                                         <div class="field-label">
-                                        <label class="label is-underlined has-text-weight-bold">Technologies:</label>
+                                        <label class="label is-underlined has-text-weight-bold">{{ $.Params.technologies }}</label>
                                         </div>
                                         <div class="field-body">
                                             <div class="field">

@@ -6,7 +6,7 @@
     <section class="tiles pt-4 is-flex-grow-1">
         <header class="">
             <p class="card-header-title">
-                Work experiences
+                {{ .Params.work_experiences }}
             </p>
         </header>
         <div id="collapsible-card">
@@ -32,7 +32,7 @@
                 <div class="notification has-background-white">
                     <div class="field is-horizontal mb-0">
                         <div class="field-label">
-                            <label class="label is-underlined has-text-weight-bold">Period:</label>
+                            <label class="label is-underlined has-text-weight-bold">{{ $.Params.period }}</label>
                         </div>
                         <div class="field-body">
                             <div class="field">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="field is-horizontal mb-0">
                         <div class="field-label">
-                            <label class="label is-underlined has-text-weight-bold">Company:</label>
+                            <label class="label is-underlined has-text-weight-bold">{{ $.Params.company }}</label>
                         </div>
                         <div class="field-body">
                             <div class="field">
@@ -52,7 +52,7 @@
                     </div>
                     <div class="field is-horizontal mb-0">
                         <div class="field-label">
-                            <label class="label is-underlined has-text-weight-bold">Role:</label>
+                            <label class="label is-underlined has-text-weight-bold">{{ $.Params.role }}</label>
                         </div>
                         <div class="field-body">
                             <div class="field">
@@ -62,7 +62,7 @@
                     </div>
                     <div class="field is-horizontal mb-0">
                         <div class="field-label">
-                            <label class="label is-underlined has-text-weight-bold">Project:</label>
+                            <label class="label is-underlined has-text-weight-bold">{{ $.Params.project }}</label>
                         </div>
                         <div class="field-body">
                             <div class="field">
@@ -72,7 +72,7 @@
                     </div>
                     <div class="field is-horizontal mb-0">
                         <div class="field-label">
-                            <label class="label is-underlined has-text-weight-bold">Description:</label>
+                            <label class="label is-underlined has-text-weight-bold">{{ $.Params.description }}</label>
                         </div>
                         <div class="field-body">
                             <div class="field">
@@ -88,7 +88,7 @@
                     </div>
                     <div class="field is-horizontal mb-0">
                         <div class="field-label">
-                            <label class="label is-underlined has-text-weight-bold">Technologies:</label>
+                            <label class="label is-underlined has-text-weight-bold">{{ $.Params.technologies }}</label>
                         </div>
                         <div class="field-body">
                             <div class="field">

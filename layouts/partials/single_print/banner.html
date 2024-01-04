@@ -8,7 +8,7 @@
             <p class="has-text-white">{{ .Site.Params.description }}</p>
             <hr/>
             <div class="content has-text-left">
-                <h4 class="has-text-white">Contact info</h3>
+                <h4 class="has-text-white">{{ .Params.contact_info }}</h3>
                 <ul class="is-unstyled has-text-left">
                     {{ range .Site.Params.Footer.social }}
                         {{ if eq .label "Contact" }}

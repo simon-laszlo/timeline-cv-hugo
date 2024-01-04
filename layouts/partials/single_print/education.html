@@ -1,6 +1,6 @@
 {{ "<!-- Header -->" | safeHTML }}
     <div class="content">
-        <h4 class="has-text-white">Educations</h3>
+        <h4 class="has-text-white">{{ .Params.educations }}</h3>
             {{ range .Site.Params.Educations.showcase }}
                 <ul class="is-unstyled has-text-white">
                     <li class="is-size-6 pb-0 pt-0 date-color has-text-weight-semibold">{{ .start_at}}</li>

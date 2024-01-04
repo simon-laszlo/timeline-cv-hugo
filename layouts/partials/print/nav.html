@@ -10,6 +10,17 @@
         </div>
       
         <div id="menu" class="navbar-menu">
+          <div class="navbar-start">
+            <div class="navbar-item">
+              <div>
+                <ul>
+                    {{ range .Translations }}
+                    <li class="button is-primary"><a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>
+                    {{ end }}
+                </ul>
+              </div>
+            </div>
+          </div>
       
           <div class="navbar-end">
             <div class="navbar-item">
@@ -19,7 +30,7 @@
                     <span class="icon">
                       <i class="fa-solid fa-angle-left"></i>
                     </span>
-                    <span>Back</span>
+                    <span>{{ .Params.back }}</span>
                   </a>
                 </p>
                 <p class="control">
@@ -28,7 +39,7 @@
                       <i class="fa-solid fa-file-pdf"></i>
                     </span>
                     <span>
-                      Open
+                      {{ .Params.open }}
                     </span>
                   </a>
                 </p>

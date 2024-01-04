@@ -1,6 +1,6 @@
 {{ "<!-- Header -->" | safeHTML }}
 <div class="content">
-    <h4 class="has-text-white">Languages</h3>
+    <h4 class="has-text-white">{{ .Params.languages }}</h3>
         {{ range .Site.Params.Languages.showcase }}
             <div class="has-text-white">
                 <div class="is-size-6 pb-0 pt-0">{{ .language}}</div>

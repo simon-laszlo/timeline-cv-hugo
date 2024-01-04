@@ -2,15 +2,15 @@
     <section id="educations" class="">
         <header class="card-toggle">
             <p class="card-header-title has-text-black is-size-6">
-                Languages
+                {{ .Params.languages }}
             </p>
         </header>
             <div class="card-content">
                 <div class="columns">
-                    <div class="column is-size-6 is-underlined has-text-weight-bold">language</div>
-                    <div class="column is-size-6 is-underlined has-text-weight-bold">speak</div>
-                    <div class="column is-size-6 is-underlined has-text-weight-bold">write</div>
-                    <div class="column is-size-6 is-underlined has-text-weight-bold">read</div>
+                    <div class="column is-size-6 is-underlined has-text-weight-bold">{{ .Params.language }}</div>
+                    <div class="column is-size-6 is-underlined has-text-weight-bold">{{ .Params.speak }}</div>
+                    <div class="column is-size-6 is-underlined has-text-weight-bold">{{ .Params.write }}</div>
+                    <div class="column is-size-6 is-underlined has-text-weight-bold">{{ .Params.read }}</div>
                 </div>
             {{ range .Site.Params.Languages.showcase }}
                     <div class="columns">
