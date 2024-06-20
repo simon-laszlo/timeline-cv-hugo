@@ -9,7 +9,7 @@
             <div class="content">
             {{ range .Site.Params.Main.Projects.showcase }}
             <p class="is-size-7 has-text-weight-bold mb-1">{{ .company }}, <span>{{ .city }}</span><span> - {{ .role }}</span></p>
-            <p class="is-size-7 mb-2">{{ .range }}</p>
+            <p class="is-size-7 mb-0">{{ .range }}</p>
                     <p class="is-size-7">{{ .description }}</p>
                     <ul class="has-text-justified mt-0">
                         {{ range $i, $e := .details }}
