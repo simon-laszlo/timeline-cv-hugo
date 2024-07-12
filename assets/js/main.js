@@ -56,7 +56,7 @@ function printPdf() {
 	const { jsPDF } = window.jspdf;
 	var source = document.getElementById("book");
 	console.log(source);
-	const doc = new jsPDF('p','mm',[297, 210]);
+	const doc = new jsPDF('p','mm',[297, 210], true);
 	doc.html(source, {
 		callback: function(doc) {
 			// Save the PDF
