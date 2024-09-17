@@ -82,15 +82,21 @@ function printPdf(single) {
 			return response.text();
 		}).then(data => {
 			const tempDiv = document.createElement("div");
+			const viewport = document.querySelector('meta[name="viewport"]');
+			if (viewport) {
+				viewport.setAttribute("content", "width=1024");
+			}
 			tempDiv.innerHTML = data;
-			console.log(data);
 			var source = tempDiv.querySelector("#book");
-			console.log(source);
+
 			const doc = new jsPDF('p','mm',[297, 210], true);
 			doc.html(source, {
 				callback: function(doc) {
 					// Save the PDF
 					window.open(URL.createObjectURL(doc.output("blob")))
+					if (viewport) {
+						viewport.setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=5");
+					}
 				},
 				x: 0,
 				y: -3,
