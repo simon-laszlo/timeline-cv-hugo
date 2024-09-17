@@ -19,6 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
 			printPdf();
 		});
 	}
+	const singlePrintBtn = document.getElementById('single_print');
+	if (!!singlePrintBtn) {
+		singlePrintBtn.addEventListener('click', e => {
+			printPdf(true);
+		});
+	}
 	const topBtn = document.getElementById('topBtn');
 	if (!!topBtn) {
 		topBtn.addEventListener('click', e => {
@@ -52,20 +58,49 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-function printPdf() {
-	const { jsPDF } = window.jspdf;
-	var source = document.getElementById("book");
-	console.log(source);
-	const doc = new jsPDF('p','mm',[297, 210], true);
-	doc.html(source, {
-		callback: function(doc) {
-			// Save the PDF
-			window.open(URL.createObjectURL(doc.output("blob")))
-		},
-		x: 0,
-    y: -3,
-    width: 210, //target width in the PDF document
-    windowWidth: 805, //window width in CSS pixels,
+function loadScript(src, async = true, defer = true) {
+	return new Promise((resolve, reject) => {
+			const script = document.createElement('script');
+			script.src = src;
+			script.async = async;
+			script.defer = defer;
+			script.onload = () => resolve(src);
+			script.onerror = () => reject(new Error(`Script load error for ${src}`));
+			document.head.appendChild(script);
+	});
+}
+
+function printPdf(single) {
+	// Load the scripts dynamically
+	Promise.all([
+			loadScript('/js/jspdf/jspdf.umd.min.js'),
+			loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js')
+	])
+	.then((sources) => {
+		const { jsPDF } = window.jspdf;
+		fetch(single ? "single_print/" : "print/").then(response => {
+			return response.text();
+		}).then(data => {
+			const tempDiv = document.createElement("div");
+			tempDiv.innerHTML = data;
+			console.log(data);
+			var source = tempDiv.querySelector("#book");
+			console.log(source);
+			const doc = new jsPDF('p','mm',[297, 210], true);
+			doc.html(source, {
+				callback: function(doc) {
+					// Save the PDF
+					window.open(URL.createObjectURL(doc.output("blob")))
+				},
+				x: 0,
+				y: -3,
+				width: 210, //target width in the PDF document
+				windowWidth: 805, //window width in CSS pixels,
+			});
+		});
+		})
+	.catch((error) => {
+			console.error('Error loading scripts:', error);
 	});
 }
 
