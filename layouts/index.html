@@ -7,6 +7,10 @@
 		{{ "<!-- Main -->" | safeHTML }}
 			<div id="main">
 
+				<div class="has-text-white is-size-6 has-text-justified mb-6"> 
+					{{ .Content }}
+				</div>
+
 				{{ if .Site.Params.Projects.enable }}
 					{{ partial "project.html" . }}
 				{{ end }}

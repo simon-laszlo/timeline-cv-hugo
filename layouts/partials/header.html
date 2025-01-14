@@ -13,7 +13,7 @@
 	<title>{{ .Title }}{{ if not .IsHome }} &middot; {{ .Site.Title }}{{ end }}</title>
 	{{ "<!-- Stylesheets -->" | safeHTML }}
 	{{ $sass := resources.Get "/sass/main.sass" }}
-	{{ $style := $sass | resources.ToCSS  | resources.Minify }}
+	{{ $style := $sass | css.Sass  | resources.Minify }}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}"/>
 
 	{{ range .Site.Params.custom_css }}

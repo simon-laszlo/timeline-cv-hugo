@@ -16,7 +16,7 @@
                     <div>
                         <p class="has-text-white is-size-4">{{ .Params.period }}</p>
                     </div>
-                    <ul>
+                    <ul class="mb-5">
                     {{ range .Site.Params.Projects.showcase }}
                         {{ if .new_job }}
                             <li class="is-inline"><a href="#{{ .start_at}}">-{{ .start_at}}</a></li>

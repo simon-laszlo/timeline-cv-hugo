@@ -8,12 +8,12 @@
         <div id="collapsible-card">
             <div class="content">
             {{ range .Site.Params.Main.Projects.showcase }}
-            <p class="is-size-7 has-text-weight-bold mb-1">{{ .company }}, <span>{{ .city }}</span><span> - {{ .role }}</span></p>
-            <p class="is-size-7 mb-0">{{ .range }}</p>
-                    <p class="is-size-7">{{ .description }}</p>
-                    <ul class="has-text-justified mt-0">
+            <p class="is-size-7 has-text-weight-bold mb-0 mt-0">{{ .company }}, <span>{{ .city }}</span><span> - {{ .role }}</span></p>
+            <p class="is-size-7 mb-0 mt-0">{{ .range }}</p>
+                    <p class="is-size-7 mb-0 mt-1">{{ .description }}</p>
+                    <ul class="has-text-justified mt-0 mb-0">
                         {{ range $i, $e := .details }}
-                            <li class="is-size-7">
+                            <li class="is-size-7 mt-0 mb-0">
                                 {{.}}
                             </li>
                         {{ end }}

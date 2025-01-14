@@ -4,8 +4,8 @@
 <h2 align="center"> <a target="_blank" href="https://timelinecv.netlify.app/" rel="nofollow">Demo</a></h2>
 
 <p align=center>
-  <a href="https://github.com/gohugoio/hugo/releases/tag/v0.100.0" alt="Contributors">
-    <img src="https://img.shields.io/static/v1?label=min-HUGO-version&message=0.100.0&color=f00&logo=hugo" />
+  <a href="https://github.com/gohugoio/hugo/releases/tag/v0.140.0" alt="Contributors">
+    <img src="https://img.shields.io/static/v1?label=min-HUGO-version&message=0.140.0&color=f00&logo=hugo" />
   </a>
 
   <a href="https://github.com/simon-laszlo/timeline-cv-hugo/blob/main/LICENSE">

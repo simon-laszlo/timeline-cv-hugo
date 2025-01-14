@@ -11,6 +11,10 @@
           </header>
           {{- partial "personal.html" . -}}
 
+          <div class="has-text-justified ml-3 mr-3">
+            {{ .Content }}
+          </div>
+
           {{ if .Site.Params.Educations.enable }}
             {{- partial "print/education.html" . -}}
           {{ end }}
