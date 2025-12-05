@@ -1,8 +1,8 @@
 {{ "<!-- Header -->" | safeHTML }}
 <div class="content">
-    <h4 class="has-text-white">{{ .Params.languages }}</h3>
+    <h4 class="has-text-white mb-0">{{ .Params.languages }}</h3>
         {{ range .Site.Params.Languages.showcase }}
-            <div class="has-text-white mb-0">
+            <div class="has-text-white">
                 <div class="is-size-7 pb-0 pt-0">{{ .language}}</div>
                 <div id="progressOuterMax" style = "width: 100%; background: #eceeef; position: relative; padding: 0px;">
                     <div id="barStatus" style="height: 10px; background-color: #083d58; width: {{ .value }}%;"></div>
