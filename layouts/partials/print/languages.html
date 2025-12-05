@@ -1,16 +1,16 @@
 {{ "<!-- Header -->" | safeHTML }}
-    <section id="educations" class="">
+    <section id="langauges" class="">
         <header class="card-toggle">
             <p class="card-header-title has-text-black is-size-6">
                 {{ .Params.languages }}
             </p>
         </header>
-            <div class="card-content">
+            <div class="card-content pb-0 pt-0">
                 <div class="columns">
-                    <div class="column is-size-6 is-underlined has-text-weight-bold">{{ .Params.language }}</div>
-                    <div class="column is-size-6 is-underlined has-text-weight-bold">{{ .Params.speak }}</div>
-                    <div class="column is-size-6 is-underlined has-text-weight-bold">{{ .Params.write }}</div>
-                    <div class="column is-size-6 is-underlined has-text-weight-bold">{{ .Params.read }}</div>
+                    <div class="column is-size-6 is-underlined has-text-weight-bold pb-0 pt-0">{{ .Params.language }}</div>
+                    <div class="column is-size-6 is-underlined has-text-weight-bold pb-0 pt-0">{{ .Params.speak }}</div>
+                    <div class="column is-size-6 is-underlined has-text-weight-bold pb-0 pt-0">{{ .Params.write }}</div>
+                    <div class="column is-size-6 is-underlined has-text-weight-bold pb-0 pt-0">{{ .Params.read }}</div>
                 </div>
             {{ range .Site.Params.Languages.showcase }}
                     <div class="columns">
